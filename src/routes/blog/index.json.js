@@ -9,3 +9,14 @@ export async function get(req, res) {
 
   res.end(JSON.stringify(posts));
 }
+
+export async function post(req, res) {
+  const { db } = await init();
+  const post = req.body;
+  const result = await db.collection("posts").insert(post);
+  res.writeHead(200, {
+    'Content-Type': 'application/json'
+  });
+
+  res.end(JSON.stringify(result));
+}
