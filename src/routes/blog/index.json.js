@@ -13,10 +13,10 @@ export async function get(req, res) {
 export async function post(req, res) {
   const { db } = await init();
   const post = req.body;
-  const result = await db.collection("posts").insert(post);
+  const result = await db.collection("posts").insertOne(post);
   res.writeHead(200, {
     'Content-Type': 'application/json'
   });
-
-  res.end(JSON.stringify(result));
+  post._id = result.insertedId;
+  res.end(JSON.stringify(post));
 }
