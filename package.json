@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "ssm-starter",
+  "description": "Starter project for Sapper-Svelte-Mongo-based applications",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
