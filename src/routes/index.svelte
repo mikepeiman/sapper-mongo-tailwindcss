@@ -1,4 +1,4 @@
-<style>
+<style lang="postcss">
 	h1, figure, p {
 		text-align: center;
 		margin: 0 auto;
@@ -25,6 +25,12 @@
 		margin: 1em auto;
 	}
 
+	.test {
+    @apply bg-red-500 text-red-100 uppercase tracking-wide font-semibold
+      text-4xl px-4 py-3 shadow-lg rounded;
+
+	}
+
 	@media (min-width: 480px) {
 		h1 {
 			font-size: 4em;
@@ -44,3 +50,4 @@
 </figure>
 
 <p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<button class="test"></button>

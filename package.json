@@ -4,20 +4,27 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
+    "build": "yarn run build:tailwindcss && sapper build --legacy",
+    "dev:tailwindcss": "postcss static/tailwind.css -o static/main.css -w",
+    "build:tailwindcss": "postcss static/tailwind.css -o static/main.css",
+    "export": "yarn run build:tailwindcss && sapper export --legacy",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run"
   },
   "dependencies": {
+    "autoprefixer": "^10.2.5",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "compression": "^1.7.1",
     "mongodb": "^3.4.1",
     "polka": "next",
-    "sirv": "^0.4.0"
+    "postcss-import": "^14.0.1",
+    "postcss-load-config": "^3.0.1",
+    "postcss-nested": "^5.0.5",
+    "sirv": "^0.4.0",
+    "tailwindcss": "^2.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -34,6 +41,7 @@
     "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-terser": "^4.0.4",
     "sapper": "^0.27.0",
-    "svelte": "^3.0.0"
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^4.7.0"
   }
 }
