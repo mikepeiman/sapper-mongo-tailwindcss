@@ -9,8 +9,8 @@
     let videosList = [];
     let items, res;
     let channelDescription, channelDetails, channelThumbnails, videoDetails;
-    import Button from "./Button.svelte";
-    import TextField from "./TextField.svelte";
+    import Button from "smelte/src/components/Button";
+    import TextField from "smelte/src/components/TextField";
     // import { get } from '../scripts/_db.js'
     import {
         storeCurrentDisplayContext,
