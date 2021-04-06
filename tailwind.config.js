@@ -1,5 +1,5 @@
 const colors = require('tailwindcss/colors')
-console.log(`🚀 ~ file: tailwind.config.js ~ line 2 ~ colors`, colors)
+// console.log(`🚀 ~ file: tailwind.config.js ~ line 2 ~ colors`, colors)
 
 module.exports = {
   purge: [],
